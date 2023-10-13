@@ -14,10 +14,12 @@ public final class Task_3 {
         if (a.length == 0 || b.length == 0) {
             return false;
         }
-        int minA = Arrays.stream(a).min().getAsInt();
-        int minB = Arrays.stream(b).min().getAsInt();
-        int maxA = Arrays.stream(a).max().getAsInt();
-        int maxB = Arrays.stream(b).max().getAsInt();
+        Arrays.sort(a);
+        Arrays.sort(b);
+        int minA = a[0];
+        int minB = b[0];
+        int maxA = a[a.length - 1];
+        int maxB = b[b.length - 1];
         return (minA > minB && maxA < maxB);
     }
 }

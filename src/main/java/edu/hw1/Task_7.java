@@ -6,35 +6,7 @@ public final class Task_7 {
     }
 
     private static final int INT_MIN = -2147483648;
-
-    @SuppressWarnings("MagicNumber")
-    private static int[] itob(int num) {
-        int[] bits = new int[32];
-        int n = num;
-        if (n < 0) {
-            n *= -1;
-        }
-        int i = 31;
-        for (; n != 0; i--) {
-            bits[i] = n % 2;
-            n /= 2;
-        }
-        int[] newBits = new int[31 - i++];
-        System.arraycopy(bits, i, newBits, 0, newBits.length);
-        return newBits;
-    }
-
-    private static int btoi(int[] bits) {
-        int b = 1;
-        int num = 0;
-        for (int i = bits.length - 1; i >= 0; i--) {
-            if (bits[i] == 1) {
-                num += b;
-            }
-            b *= 2;
-        }
-        return num;
-    }
+    private static final int SIZE_BITS = 32;
 
     public static int rotateLeft(int num, int shift) {
         if (shift < 0) {
@@ -86,5 +58,33 @@ public final class Task_7 {
             spare[index] = 1;
         }
         return (btoi(spare) * sign);
+    }
+
+    private static int[] itob(int num) {
+        int[] bits = new int[SIZE_BITS];
+        int n = num;
+        if (n < 0) {
+            n *= -1;
+        }
+        int i = SIZE_BITS - 1;
+        for (; n != 0; i--) {
+            bits[i] = n % 2;
+            n /= 2;
+        }
+        int[] newBits = new int[SIZE_BITS - 1 - i++];
+        System.arraycopy(bits, i, newBits, 0, newBits.length);
+        return newBits;
+    }
+
+    private static int btoi(int[] bits) {
+        int b = 1;
+        int num = 0;
+        for (int i = bits.length - 1; i >= 0; i--) {
+            if (bits[i] == 1) {
+                num += b;
+            }
+            b *= 2;
+        }
+        return num;
     }
 }

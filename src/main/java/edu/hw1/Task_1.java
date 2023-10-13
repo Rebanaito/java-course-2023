@@ -8,6 +8,25 @@ public final class Task_1 {
     }
 
     private final static Logger LOGGER = Logger.getLogger("LOGGER");
+    private final static int SEC_PER_MIN = 60;
+
+    public static int minutesToSeconds(String str) {
+        if (str == null) {
+            return -1;
+        }
+        String[] halves = str.split(":");
+        if (!formatCheck(halves)) {
+            return -1;
+        }
+        int minutes = Integer.parseInt(halves[0]);
+        int seconds = Integer.parseInt(halves[1]);
+        if (seconds > SEC_PER_MIN - 1) {
+            LOGGER.info("Invalid seconds value");
+            return -1;
+        }
+        seconds += minutes * SEC_PER_MIN;
+        return seconds;
+    }
 
     private static boolean formatCheck(String[] halves) {
         if (halves.length != 2) {
@@ -23,21 +42,5 @@ public final class Task_1 {
             return false;
         }
         return true;
-    }
-
-    @SuppressWarnings("MagicNumber")
-    public static int minutesToSeconds(String str) {
-        String[] halves = str.split(":");
-        if (!formatCheck(halves)) {
-            return -1;
-        }
-        int minutes = Utils.atoi(halves[0]);
-        int seconds = Utils.atoi(halves[1]);
-        if (seconds > 59) {
-            LOGGER.info("Invalid seconds value");
-            return -1;
-        }
-        seconds += minutes * 60;
-        return seconds;
     }
 }

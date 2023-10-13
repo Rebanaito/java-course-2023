@@ -41,5 +41,14 @@ public class Task_1_Test {
 
         answer = Task_1.minutesToSeconds("Lorem ipsum");
         assertThat(answer).isEqualTo(-1);
+
+        answer = Task_1.minutesToSeconds(":");
+        assertThat(answer).isEqualTo(-1);
+
+        answer = Task_1.minutesToSeconds("");
+        assertThat(answer).isEqualTo(-1);
+
+        answer = Task_1.minutesToSeconds(null);
+        assertThat(answer).isEqualTo(-1);
     }
 }

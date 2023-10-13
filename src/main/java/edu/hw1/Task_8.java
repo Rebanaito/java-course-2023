@@ -8,10 +8,27 @@ public final class Task_8 {
     }
 
     private final static Logger LOGGER = Logger.getLogger("LOGGER");
+    private final static int BOARD_SIZE = 8;
 
-    @SuppressWarnings("MagicNumber")
+    public static boolean knightBoardCapture(int[][] board) {
+        if (invalidBoard(board)) {
+            return false;
+        }
+        for (int i = 0; i < BOARD_SIZE; i++) {
+            for (int j = 0; j < BOARD_SIZE; j++) {
+                if (board[i][j] == 0) {
+                    continue;
+                }
+                if (checkNeighbors(board, i, j)) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
     private static boolean checkNeighbor(int[][] board, int i, int j) {
-        if (i < 0 || i >= 8 || j < 0 || j >= 8) {
+        if (i < 0 || i >= BOARD_SIZE || j < 0 || j >= BOARD_SIZE) {
             return false;
         }
         return (board[i][j] == 1);
@@ -23,18 +40,17 @@ public final class Task_8 {
         return (neighborsRight | neighborsDown);
     }
 
-    @SuppressWarnings("MagicNumber")
     private static boolean invalidBoard(int[][] board) {
-        if (board.length != 8) {
+        if (board.length != BOARD_SIZE) {
             LOGGER.info("Board must have 8 rows");
             return true;
         }
-        for (int i = 0; i < 8; i++) {
-            if (board[i].length != 8) {
+        for (int i = 0; i < BOARD_SIZE; i++) {
+            if (board[i].length != BOARD_SIZE) {
                 LOGGER.info("Board must have 8 columns");
                 return true;
             }
-            for (int j = 0; j < 8; j++) {
+            for (int j = 0; j < BOARD_SIZE; j++) {
                 if (!(board[i][j] == 0 || board[i][j] == 1)) {
                     LOGGER.info("Only '1' and '0' are allowed");
                     return true;
@@ -42,23 +58,5 @@ public final class Task_8 {
             }
         }
         return false;
-    }
-
-    @SuppressWarnings("MagicNumber")
-    public static boolean knightBoardCapture(int[][] board) {
-        if (invalidBoard(board)) {
-            return false;
-        }
-        for (int i = 0; i < 8; i++) {
-            for (int j = 0; j < 8; j++) {
-                if (board[i][j] == 0) {
-                    continue;
-                }
-                if (checkNeighbors(board, i, j)) {
-                    return false;
-                }
-            }
-        }
-        return true;
     }
 }
