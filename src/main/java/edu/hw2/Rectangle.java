@@ -2,8 +2,8 @@ package edu.hw2;
 
 public class Rectangle {
 	public Rectangle(int width, int height) {
-		this.width = width;
-		this.height = height;
+		this.width = Math.max(width, 0);
+		this.height = Math.max(height, 0);
 	}
 	private final int width;
 	private final int height;
