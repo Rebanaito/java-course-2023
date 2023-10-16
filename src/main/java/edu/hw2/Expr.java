@@ -9,7 +9,7 @@ public sealed interface Expr {
 		}
 	}
 
-	public record Negate(Expr exp) implements Expr {
+	record Negate(Expr exp) implements Expr {
 		public double evaluate() {
 			return -(exp.evaluate());
 		}
@@ -17,6 +17,9 @@ public sealed interface Expr {
 
 	record Exponent(Expr exp, int n) implements Expr {
 		public double evaluate() {
+			if (n < 0) {
+				return 1 / exponent(exp.evaluate(), -n);
+			}
 			return exponent(exp.evaluate(), n);
 		}
 
