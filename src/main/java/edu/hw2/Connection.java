@@ -1,5 +1,5 @@
 package edu.hw2;
 
 public interface Connection extends AutoCloseable {
-	void execute(String command);
+    void execute(String command);
 }
