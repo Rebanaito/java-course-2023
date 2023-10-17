@@ -1,5 +1,6 @@
 package edu.project1;
 
+import java.util.NoSuchElementException;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.logging.Logger;
@@ -34,13 +35,19 @@ public class Session {
             return 1;
         }
         Scanner scanner = new Scanner(System.in);
+        String in;
         if (answer.length() == 0 || answer.length() > LONGEST_WORD) {
             LOGGER.info("Invalid word");
             return 1;
         }
         while (!gameOver()) {
             System.out.println("Guess a letter:");
-            String in = scanner.nextLine();
+            try {
+                in = scanner.nextLine();
+            } catch (NoSuchElementException exc) {
+                System.out.println("Exiting the game");
+                return 0;
+            }
             tryInput(in);
         }
         result();
