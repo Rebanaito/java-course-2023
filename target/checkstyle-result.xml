@@ -1,99 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <checkstyle version="9.3">
-<file name="/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw1/Task_2.java">
-</file>
-<file name="/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw1/Task_7.java">
-</file>
-<file name="/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw1/Task_1.java">
-</file>
-<file name="/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw1/Task_4.java">
-</file>
-<file name="/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw1/Task_8.java">
-</file>
-<file name="/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw1/Task_5.java">
-</file>
-<file name="/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw1/Task_0.java">
-</file>
-<file name="/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw1/Task_6.java">
-</file>
-<file name="/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw1/Task_3.java">
-</file>
-<file name="/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw1/Utils.java">
-</file>
-<file name="/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw3/StockMarket.java">
-<error line="4" column="1" severity="error" message="File contains tab characters (this is the first instance)." source="com.puppycrawl.tools.checkstyle.checks.whitespace.FileTabCharacterCheck"/>
-<error line="5" column="9" severity="error" message="&apos;METHOD_DEF&apos; should be separated from previous line." source="com.puppycrawl.tools.checkstyle.checks.whitespace.EmptyLineSeparatorCheck"/>
-<error line="6" column="9" severity="error" message="&apos;METHOD_DEF&apos; should be separated from previous line." source="com.puppycrawl.tools.checkstyle.checks.whitespace.EmptyLineSeparatorCheck"/>
-</file>
 <file name="/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw3/Cluster.java">
-<error line="1" severity="error" message="File does not end with a newline." source="com.puppycrawl.tools.checkstyle.checks.NewlineAtEndOfFileCheck"/>
-<error line="3" column="1" severity="error" message="Utility classes should not have a public or default constructor." source="com.puppycrawl.tools.checkstyle.checks.design.HideUtilityClassConstructorCheck"/>
-<error line="4" column="1" severity="error" message="File contains tab characters (this is the first instance)." source="com.puppycrawl.tools.checkstyle.checks.whitespace.FileTabCharacterCheck"/>
-<error line="44" column="78" severity="error" message="WhitespaceAround: &apos;+&apos; is not followed by whitespace. Empty blocks may only be represented as {} when its ctor, method, type, lambda or loop" source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
-<error line="44" column="78" severity="error" message="WhitespaceAround: &apos;+&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="3" column="1" severity="warning" message="Private ctor in non-final class. Inspect the code and make sure its intended." source="com.puppycrawl.tools.checkstyle.checks.design.FinalClassCheck"/>
 </file>
 <file name="/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw3/FrequencyDict.java">
-<error line="1" severity="error" message="File does not end with a newline." source="com.puppycrawl.tools.checkstyle.checks.NewlineAtEndOfFileCheck"/>
-<error line="3" column="8" severity="error" message="Unused import - java.lang.reflect.Type." source="com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck"/>
-<error line="4" column="8" severity="error" message="Unused import - java.util.HashMap." source="com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck"/>
-<error line="6" column="8" severity="error" message="Unused import - java.util.List." source="com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck"/>
-<error line="8" column="1" severity="error" message="Utility classes should not have a public or default constructor." source="com.puppycrawl.tools.checkstyle.checks.design.HideUtilityClassConstructorCheck"/>
-<error line="9" column="1" severity="error" message="File contains tab characters (this is the first instance)." source="com.puppycrawl.tools.checkstyle.checks.whitespace.FileTabCharacterCheck"/>
-<error line="22" column="9" severity="error" message="Uncommented main method found." source="com.puppycrawl.tools.checkstyle.checks.UncommentedMainCheck"/>
-<error line="25" severity="error" message="Using System.out for logging is a bad practice. Use a logger instead." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpSinglelineJavaCheck"/>
-</file>
-<file name="/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw3/CustomComparator.java">
-<error line="1" severity="error" message="File does not end with a newline." source="com.puppycrawl.tools.checkstyle.checks.NewlineAtEndOfFileCheck"/>
-<error line="6" column="1" severity="error" message="File contains tab characters (this is the first instance)." source="com.puppycrawl.tools.checkstyle.checks.whitespace.FileTabCharacterCheck"/>
-<error line="8" column="9" severity="error" message="&apos;METHOD_DEF&apos; should be separated from previous line." source="com.puppycrawl.tools.checkstyle.checks.whitespace.EmptyLineSeparatorCheck"/>
-</file>
-<file name="/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw3/Contact.java">
-<error line="1" severity="error" message="File does not end with a newline." source="com.puppycrawl.tools.checkstyle.checks.NewlineAtEndOfFileCheck"/>
-<error line="6" column="1" severity="error" message="File contains tab characters (this is the first instance)." source="com.puppycrawl.tools.checkstyle.checks.whitespace.FileTabCharacterCheck"/>
-<error line="27" column="39" severity="error" message="The String &quot;ASC&quot; appears 2 times in the file." source="com.puppycrawl.tools.checkstyle.checks.coding.MultipleStringLiteralsCheck"/>
-<error line="40" column="85" severity="error" message="WhitespaceAround: &apos;-&apos; is not followed by whitespace. Empty blocks may only be represented as {} when its ctor, method, type, lambda or loop" source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
-<error line="40" column="85" severity="error" message="WhitespaceAround: &apos;-&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
-<error line="40" column="87" severity="error" message="WhitespaceAround: &apos;-&apos; is not followed by whitespace. Empty blocks may only be represented as {} when its ctor, method, type, lambda or loop" source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
-<error line="40" column="87" severity="error" message="WhitespaceAround: &apos;-&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
-</file>
-<file name="/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw3/ReverseIterator.java">
-<error line="1" severity="error" message="File does not end with a newline." source="com.puppycrawl.tools.checkstyle.checks.NewlineAtEndOfFileCheck"/>
-<error line="8" column="1" severity="error" message="File contains tab characters (this is the first instance)." source="com.puppycrawl.tools.checkstyle.checks.whitespace.FileTabCharacterCheck"/>
-</file>
-<file name="/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw3/Stock.java">
-<error line="6" column="1" severity="error" message="File contains tab characters (this is the first instance)." source="com.puppycrawl.tools.checkstyle.checks.whitespace.FileTabCharacterCheck"/>
-<error line="14" column="9" severity="error" message="&apos;VARIABLE_DEF&apos; should be separated from previous line." source="com.puppycrawl.tools.checkstyle.checks.whitespace.EmptyLineSeparatorCheck"/>
+<error line="5" column="1" severity="warning" message="Private ctor in non-final class. Inspect the code and make sure its intended." source="com.puppycrawl.tools.checkstyle.checks.design.FinalClassCheck"/>
 </file>
 <file name="/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw3/Roman.java">
-<error line="1" severity="error" message="File does not end with a newline." source="com.puppycrawl.tools.checkstyle.checks.NewlineAtEndOfFileCheck"/>
-<error line="3" column="1" severity="error" message="Utility classes should not have a public or default constructor." source="com.puppycrawl.tools.checkstyle.checks.design.HideUtilityClassConstructorCheck"/>
-<error line="4" column="1" severity="error" message="File contains tab characters (this is the first instance)." source="com.puppycrawl.tools.checkstyle.checks.whitespace.FileTabCharacterCheck"/>
-<error line="6" column="35" severity="error" message="Most likely the value &apos;1000&apos; is a configuration one. You should move it to configuration file instead of source code." source="com.puppycrawl.tools.checkstyle.checks.coding.MagicNumberCheck"/>
-<error line="6" column="41" severity="error" message="Most likely the value &apos;900&apos; is a configuration one. You should move it to configuration file instead of source code." source="com.puppycrawl.tools.checkstyle.checks.coding.MagicNumberCheck"/>
-<error line="6" column="46" severity="error" message="Most likely the value &apos;500&apos; is a configuration one. You should move it to configuration file instead of source code." source="com.puppycrawl.tools.checkstyle.checks.coding.MagicNumberCheck"/>
-<error line="6" column="51" severity="error" message="Most likely the value &apos;400&apos; is a configuration one. You should move it to configuration file instead of source code." source="com.puppycrawl.tools.checkstyle.checks.coding.MagicNumberCheck"/>
-<error line="6" column="56" severity="error" message="Most likely the value &apos;100&apos; is a configuration one. You should move it to configuration file instead of source code." source="com.puppycrawl.tools.checkstyle.checks.coding.MagicNumberCheck"/>
-<error line="6" column="61" severity="error" message="Most likely the value &apos;90&apos; is a configuration one. You should move it to configuration file instead of source code." source="com.puppycrawl.tools.checkstyle.checks.coding.MagicNumberCheck"/>
-<error line="6" column="65" severity="error" message="Most likely the value &apos;50&apos; is a configuration one. You should move it to configuration file instead of source code." source="com.puppycrawl.tools.checkstyle.checks.coding.MagicNumberCheck"/>
-<error line="6" column="69" severity="error" message="Most likely the value &apos;40&apos; is a configuration one. You should move it to configuration file instead of source code." source="com.puppycrawl.tools.checkstyle.checks.coding.MagicNumberCheck"/>
-<error line="6" column="73" severity="error" message="Most likely the value &apos;10&apos; is a configuration one. You should move it to configuration file instead of source code." source="com.puppycrawl.tools.checkstyle.checks.coding.MagicNumberCheck"/>
-<error line="6" column="77" severity="error" message="Most likely the value &apos;9&apos; is a configuration one. You should move it to configuration file instead of source code." source="com.puppycrawl.tools.checkstyle.checks.coding.MagicNumberCheck"/>
-<error line="6" column="80" severity="error" message="Most likely the value &apos;5&apos; is a configuration one. You should move it to configuration file instead of source code." source="com.puppycrawl.tools.checkstyle.checks.coding.MagicNumberCheck"/>
-<error line="6" column="83" severity="error" message="Most likely the value &apos;4&apos; is a configuration one. You should move it to configuration file instead of source code." source="com.puppycrawl.tools.checkstyle.checks.coding.MagicNumberCheck"/>
-<error line="10" column="37" severity="error" message="Assignment of parameter &apos;num&apos; is not allowed." source="com.puppycrawl.tools.checkstyle.checks.coding.ParameterAssignmentCheck"/>
+<error line="3" column="1" severity="warning" message="Private ctor in non-final class. Inspect the code and make sure its intended." source="com.puppycrawl.tools.checkstyle.checks.design.FinalClassCheck"/>
 </file>
 <file name="/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw3/Atbash.java">
-<error line="1" severity="error" message="File does not end with a newline." source="com.puppycrawl.tools.checkstyle.checks.NewlineAtEndOfFileCheck"/>
-<error line="3" column="1" severity="error" message="Utility classes should not have a public or default constructor." source="com.puppycrawl.tools.checkstyle.checks.design.HideUtilityClassConstructorCheck"/>
-<error line="4" column="1" severity="error" message="File contains tab characters (this is the first instance)." source="com.puppycrawl.tools.checkstyle.checks.whitespace.FileTabCharacterCheck"/>
-<error line="12" column="53" severity="error" message="&apos;typecast&apos; is not followed by whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAfterCheck"/>
-<error line="14" column="53" severity="error" message="&apos;typecast&apos; is not followed by whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAfterCheck"/>
+<error line="3" column="1" severity="warning" message="Private ctor in non-final class. Inspect the code and make sure its intended." source="com.puppycrawl.tools.checkstyle.checks.design.FinalClassCheck"/>
 </file>
 <file name="/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw3/NYSE.java">
-<error line="1" severity="error" message="File does not end with a newline." source="com.puppycrawl.tools.checkstyle.checks.NewlineAtEndOfFileCheck"/>
-<error line="6" column="1" severity="error" message="File contains tab characters (this is the first instance)." source="com.puppycrawl.tools.checkstyle.checks.whitespace.FileTabCharacterCheck"/>
-<error line="8" column="9" severity="error" message="&apos;VARIABLE_DEF&apos; should be separated from previous line." source="com.puppycrawl.tools.checkstyle.checks.whitespace.EmptyLineSeparatorCheck"/>
-<error line="8" column="51" severity="error" message="Name &apos;queue&apos; must match pattern &apos;^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.ConstantNameCheck"/>
-<error line="9" column="9" severity="error" message="&apos;METHOD_DEF&apos; should be separated from previous line." source="com.puppycrawl.tools.checkstyle.checks.whitespace.EmptyLineSeparatorCheck"/>
 </file>
 </checkstyle>

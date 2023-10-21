@@ -3,36 +3,37 @@ package edu.hw3;
 import org.jetbrains.annotations.NotNull;
 
 public class Stock implements Comparable<Stock> {
-	public Stock(String name, double price) {
-		this.nameOnTheExchange = name;
-		this.stockPrice = price;
-	}
+    public Stock(String name, double price) {
+        this.nameOnTheExchange = name;
+        this.stockPrice = price;
+    }
 
-	public Stock(String name) {
-		this.nameOnTheExchange = name;
-	}
-	private final String nameOnTheExchange;
-	private double stockPrice;
+    public Stock(String name) {
+        this.nameOnTheExchange = name;
+    }
 
-	public String tradedAs() {
-		return this.nameOnTheExchange;
-	}
+    private final String nameOnTheExchange;
+    private double stockPrice;
 
-	public double getStockPrice() {
-		return this.stockPrice;
-	}
+    public String tradedAs() {
+        return this.nameOnTheExchange;
+    }
 
-	public void setStockPrice(int newPrice) {
-		this.stockPrice = newPrice;
-	}
+    public double getStockPrice() {
+        return this.stockPrice;
+    }
 
-	@Override
-	public int compareTo(@NotNull Stock o) {
-		if (stockPrice > o.stockPrice) {
-			return -1;
-		} else if (stockPrice < o.stockPrice) {
-			return 1;
-		}
-		return 0;
-	}
+    public void setStockPrice(int newPrice) {
+        this.stockPrice = newPrice;
+    }
+
+    @Override
+    public int compareTo(@NotNull Stock o) {
+        if (stockPrice > o.stockPrice) {
+            return -1;
+        } else if (stockPrice < o.stockPrice) {
+            return 1;
+        }
+        return 0;
+    }
 }
