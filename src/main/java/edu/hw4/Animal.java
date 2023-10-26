@@ -50,4 +50,16 @@ public record Animal(
 		}
 		return count;
 	}
+
+	public static Animal longestName(List<Animal> animals) {
+		Comparator<Animal> nameLengthComparator = new Comparator<Animal>(){
+
+			@Override
+			public int compare(final Animal o1, final Animal o2){
+				// let your comparator look up your car's color in the custom order
+				return Integer.compare(o1.name.length(), o2.name.length());
+			}
+		};
+		return animals.stream().max(nameLengthComparator).get();
+	}
 }
