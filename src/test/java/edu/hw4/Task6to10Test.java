@@ -74,4 +74,19 @@ public class Task6to10Test {
 		var countPaws = Animal.pawsTotal(animals);
 		assertThat(countPaws).isEqualTo(34);
 	}
+
+	@Test
+	@DisplayName("Task 10 Test")
+	void task10Test() {
+		List<Animal> animals = new ArrayList<>();
+		animals.add(new Animal("Edgar", Animal.Type.CAT, Animal.Sex.M, 3, 20, 30, true));
+		animals.add(new Animal("Amy", Animal.Type.CAT, Animal.Sex.F, 7, 17, 20, true));
+		animals.add(new Animal("Sergei", Animal.Type.SPIDER, Animal.Sex.M, 1, 5, 2, false));
+		animals.add(new Animal("Chirp", Animal.Type.BIRD, Animal.Sex.F, 2, 14, 12, false));
+		animals.add(new Animal("Jimbo", Animal.Type.CAT, Animal.Sex.M, 9, 19, 26, false));
+		animals.add(new Animal("Myla", Animal.Type.DOG, Animal.Sex.F, 4, 35, 50, false));
+		animals.add(new Animal("Peter", Animal.Type.SPIDER, Animal.Sex.M, 1, 3, 3, false));
+		var count = Animal.pawsNotEqualAge(animals);
+		assertThat(count.size()).isEqualTo(5);
+	}
 }
