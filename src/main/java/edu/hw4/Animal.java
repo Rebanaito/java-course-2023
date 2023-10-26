@@ -94,4 +94,8 @@ public record Animal(
 	public static Animal oldestAnimal(List<Animal> animals) {
 		return animals.stream().max(Comparator.comparingInt(Animal::age)).get();
 	}
+
+	public static Optional<Animal> heaviestAnimalBelow(List<Animal> animals, int k) {
+		return animals.stream().filter(s -> s.height < k).max(Comparator.comparingInt(Animal::weight));
+	}
 }
