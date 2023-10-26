@@ -72,4 +72,22 @@ public record Animal(
 		}
 		return majority;
 	}
+
+	public static Map<Animal.Type, Animal> heaviestAnimal(List<Animal> animals) {
+		Map<Animal.Type, Animal> heaviest = new HashMap<Animal.Type, Animal>();
+		var iterator = animals.listIterator();
+		while (iterator.hasNext()) {
+			var a = iterator.next();
+			var val = heaviest.get(a.type);
+			if (val != null) {
+				if (val.weight < a.weight) {
+					val = a;
+				}
+				heaviest.put(a.type, val);
+			} else {
+				heaviest.put(a.type, a);
+			}
+		}
+		return heaviest;
+	}
 }
