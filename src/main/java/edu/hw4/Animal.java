@@ -1,7 +1,6 @@
 package edu.hw4;
 
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public record Animal(
 		String name,
@@ -35,5 +34,20 @@ public record Animal(
 
 	public static List<Animal> sortByWeight(List<Animal> animals, int k) {
 		return animals.stream().sorted(Comparator.comparing(Animal::weight).reversed()).toList().subList(0, k);
+	}
+
+	public static Map<Animal.Type, Integer> countTypes(List<Animal> animals) {
+		Map<Animal.Type, Integer> count = new HashMap<Animal.Type, Integer>();
+		var iterator = animals.listIterator();
+		while (iterator.hasNext()) {
+			var a = iterator.next();
+			var val = count.get(a.type);
+			if (val != null) {
+				count.put(a.type, val + 1);
+			} else {
+				count.put(a.type, 1);
+			}
+		}
+		return count;
 	}
 }
