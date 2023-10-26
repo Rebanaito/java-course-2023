@@ -90,4 +90,8 @@ public record Animal(
 		}
 		return heaviest;
 	}
+
+	public static Animal oldestAnimal(List<Animal> animals) {
+		return animals.stream().max(Comparator.comparingInt(Animal::age)).get();
+	}
 }
