@@ -1,4 +1,4 @@
-#Fri Oct 13 08:13:04 EDT 2023
+#Mon Oct 16 06:34:12 EDT 2023
 /home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw1/BitShift.java=1696946201152
 /home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw1/CountDigits.java=1696947632188
 /home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw1/EvenArrayUtils.java=1696946762047
@@ -9,15 +9,26 @@
 /home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw1/Main.java=1696959184164
 /home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw1/Nesting.java=1696945228589
 /home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw1/Palindrome.java=1696945113494
-/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw1/Task_0.java=1697036920167
-/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw1/Task_1.java=1697199077074
-/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw1/Task_2.java=1697036920171
-/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw1/Task_3.java=1697199077062
-/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw1/Task_4.java=1697036920171
-/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw1/Task_5.java=1697199077110
-/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw1/Task_6.java=1697199077086
-/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw1/Task_7.java=1697199077026
-/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw1/Task_8.java=1697199077038
-/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw1/Utils.java=1697199077046
+/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw1/Task_0.java=1697287558143
+/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw1/Task_1.java=1697287558143
+/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw1/Task_2.java=1697287558143
+/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw1/Task_3.java=1697287558143
+/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw1/Task_4.java=1697287558143
+/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw1/Task_5.java=1697287558143
+/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw1/Task_6.java=1697287558143
+/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw1/Task_7.java=1697287558143
+/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw1/Task_8.java=1697287558143
+/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw1/Utils.java=1697287558143
 /home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw1/VideoLength.java=1696947492474
+/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw2/Connection.java=1697451834937
+/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw2/ConnectionException.java=1697451834601
+/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw2/ConnectionManager.java=1697451834857
+/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw2/DefaultConnectionManager.java=1697451834869
+/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw2/Expr.java=1697451834881
+/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw2/FaultyConnection.java=1697452266010
+/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw2/FaultyConnectionManager.java=1697452266266
+/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw2/PopularCommandExecutor.java=1697451834889
+/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw2/Rectangle.java=1697451834801
+/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw2/Square.java=1697452266214
+/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw2/StableConnection.java=1697452266250
 configuration*?=35C3C79A408621CE16EDA4C4EDF9844A328EDEC6
