@@ -20,4 +20,18 @@ public class Task1to5Test {
 		assertThat(sortedByHeight.get(0).type()).isEqualTo(Animal.Type.SPIDER);
 		assertThat(sortedByHeight.get(sortedByHeight.size()-1).name()).isEqualTo("Edgar");
 	}
+
+	@Test
+	@DisplayName("Task 2 test")
+	void task2Test() {
+		List<Animal> animals = new ArrayList<>();
+		animals.add(new Animal("Edgar", Animal.Type.DOG, Animal.Sex.M, 3, 20, 30, true));
+		animals.add(new Animal("Amy", Animal.Type.CAT, Animal.Sex.F, 7, 17, 20, true));
+		animals.add(new Animal("Sergei", Animal.Type.SPIDER, Animal.Sex.M, 1, 5, 2, false));
+		animals.add(new Animal("Chirp", Animal.Type.BIRD, Animal.Sex.F, 2, 14, 12, false));
+		var sortedByWeight = Animal.sortByWeight(animals, 3);
+		assertThat(sortedByWeight.size()).isEqualTo(3);
+		assertThat(sortedByWeight.get(0).type()).isEqualTo(Animal.Type.DOG);
+		assertThat(sortedByWeight.get(sortedByWeight.size()-1).name()).isEqualTo("Chirp");
+	}
 }

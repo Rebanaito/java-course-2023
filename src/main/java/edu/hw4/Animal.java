@@ -32,4 +32,8 @@ public record Animal(
 	public static List<Animal> sortByHeight(List<Animal> animals) {
 		return animals.stream().sorted(Comparator.comparing(Animal::height)).toList();
 	}
+
+	public static List<Animal> sortByWeight(List<Animal> animals, int k) {
+		return animals.stream().sorted(Comparator.comparing(Animal::weight).reversed()).toList().subList(0, k);
+	}
 }
