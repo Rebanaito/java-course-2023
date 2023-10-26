@@ -98,4 +98,14 @@ public record Animal(
 	public static Optional<Animal> heaviestAnimalBelow(List<Animal> animals, int k) {
 		return animals.stream().filter(s -> s.height < k).max(Comparator.comparingInt(Animal::weight));
 	}
+
+	public static Integer pawsTotal(List<Animal> animals) {
+		Integer count = 0;
+		var iterator = animals.listIterator();
+		while (iterator.hasNext()) {
+			var a = iterator.next();
+			count += a.paws();
+		}
+		return count;
+	}
 }
