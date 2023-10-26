@@ -62,4 +62,14 @@ public record Animal(
 		};
 		return animals.stream().max(nameLengthComparator).get();
 	}
+
+	public static Animal.Sex sexMajority(List<Animal> animals) {
+		Animal.Sex majority = Sex.M;
+		long males = animals.stream().filter(s -> s.sex == Sex.M).count();
+		long females = animals.stream().filter(s -> s.sex == Sex.F).count();
+		if (females > males) {
+			majority = Sex.F;
+		}
+		return majority;
+	}
 }

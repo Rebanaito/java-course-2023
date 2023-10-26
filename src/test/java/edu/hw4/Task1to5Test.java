@@ -68,4 +68,16 @@ public class Task1to5Test {
 		var longestNameAnimal = Animal.longestName(animals);
 		assertThat(longestNameAnimal.name()).isEqualTo("Sergei");
 	}
+
+	@Test
+	@DisplayName("Task 5 test")
+	void task5Test() {
+		List<Animal> animals = new ArrayList<>();
+		animals.add(new Animal("Amy", Animal.Type.CAT, Animal.Sex.F, 7, 17, 20, true));
+		animals.add(new Animal("Sergei", Animal.Type.SPIDER, Animal.Sex.M, 1, 5, 2, false));
+		animals.add(new Animal("Chirp", Animal.Type.BIRD, Animal.Sex.F, 2, 14, 12, false));
+		animals.add(new Animal("Jimbo", Animal.Type.CAT, Animal.Sex.M, 9, 19, 26, false));
+		animals.add(new Animal("Myla", Animal.Type.DOG, Animal.Sex.F, 4, 35, 50, false));
+		assertThat(Animal.sexMajority(animals)).isEqualTo(Animal.Sex.F);
+	}
 }
