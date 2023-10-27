@@ -120,4 +120,8 @@ public record Animal(
 	public static Integer heavierThan(List<Animal> animals, int weight) {
 		return Math.toIntExact(animals.stream().filter(s -> s.weight > weight).count());
 	}
+
+	public static List<Animal> longNames(List<Animal> animals) {
+		return animals.stream().filter(s -> s.name.split(" ").length > 2).toList();
+	}
 }
