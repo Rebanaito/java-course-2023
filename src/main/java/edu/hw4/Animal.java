@@ -116,4 +116,8 @@ public record Animal(
 	public static List<Animal> largeBiters(List<Animal> animals) {
 		return animals.stream().filter(s -> s.height > 100 && s.bites()).toList();
 	}
+
+	public static Integer heavierThan(List<Animal> animals, int weight) {
+		return Math.toIntExact(animals.stream().filter(s -> s.weight > weight).count());
+	}
 }
