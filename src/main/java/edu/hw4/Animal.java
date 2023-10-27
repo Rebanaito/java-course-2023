@@ -128,4 +128,14 @@ public record Animal(
 	public static boolean hasDogsTallerThan(List<Animal> animals, int k) {
 		return animals.stream().anyMatch(s -> s.type == Type.DOG && s.height > k);
 	}
+
+	public static Integer totalWeightBetweenAges(List<Animal> animals, int k, int l) {
+		var iterator = animals.stream().filter(s -> s.age >= k && s.age <= l).toList().listIterator();
+		int count = 0;
+		while (iterator.hasNext()) {
+			var a = iterator.next();
+			count += a.weight;
+		}
+		return count;
+	}
 }
