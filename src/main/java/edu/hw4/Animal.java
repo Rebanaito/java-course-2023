@@ -138,4 +138,10 @@ public record Animal(
 		}
 		return count;
 	}
+
+	public static List<Animal> sortByTypeSexName(List<Animal> animals) {
+		return animals.stream().sorted(Comparator.comparing(Animal::type)
+				.thenComparing(Comparator.comparing(Animal::sex)
+						.thenComparing(Comparator.comparing(Animal::name)))).toList();
+	}
 }
