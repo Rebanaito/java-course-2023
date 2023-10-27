@@ -144,4 +144,12 @@ public record Animal(
 				.thenComparing(Comparator.comparing(Animal::sex)
 						.thenComparing(Comparator.comparing(Animal::name)))).toList();
 	}
+
+	public static boolean spidersVsDogsBites(List<Animal> animals) {
+		var dogs = animals.stream().filter(s -> s.type == Type.DOG).toList();
+		var spiders = animals.stream().filter(s -> s.type == Type.SPIDER).toList();
+		float dogRatio = (float) dogs.stream().filter(s -> s.bites).count() / dogs.size();
+		float spiderRatio = (float) spiders.stream().filter(s -> s.bites).count() / spiders.size();
+		return spiderRatio > dogRatio;
+	}
 }
