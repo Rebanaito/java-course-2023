@@ -112,4 +112,8 @@ public record Animal(
 	public static List<Animal> pawsNotEqualAge(List<Animal> animals) {
 		return animals.stream().filter(s -> s.paws() != s.age).toList();
 	}
+
+	public static List<Animal> largeBiters(List<Animal> animals) {
+		return animals.stream().filter(s -> s.height > 100 && s.bites()).toList();
+	}
 }
