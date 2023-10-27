@@ -57,4 +57,20 @@ public class Task11to15Test {
 		assertThat(longNames.size()).isEqualTo(1);
 		assertThat(longNames.get(0).type()).isEqualTo(Animal.Type.SPIDER);
 	}
+
+	@Test
+	@DisplayName("Task 14 Test")
+	void task14Test() {
+		List<Animal> animals = new ArrayList<>();
+		animals.add(new Animal("John", Animal.Type.DOG, Animal.Sex.M, 3, 12, 23, true));
+		animals.add(new Animal("Amy", Animal.Type.DOG, Animal.Sex.F, 7, 17, 10, true));
+		animals.add(new Animal("Jimbo", Animal.Type.CAT, Animal.Sex.M, 19, 19, 20, false));
+		animals.add(new Animal("Myla", Animal.Type.DOG, Animal.Sex.F, 4, 13, 25, false));
+		var hasDogs = Animal.hasDogsTallerThan(animals, 20);
+		assertThat(hasDogs).isFalse();
+		hasDogs = Animal.hasDogsTallerThan(animals, 18);
+		assertThat(hasDogs).isFalse();
+		hasDogs = Animal.hasDogsTallerThan(animals, 16);
+		assertThat(hasDogs).isTrue();
+	}
 }

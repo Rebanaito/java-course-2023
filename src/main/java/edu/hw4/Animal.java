@@ -124,4 +124,8 @@ public record Animal(
 	public static List<Animal> longNames(List<Animal> animals) {
 		return animals.stream().filter(s -> s.name.split(" ").length > 2).toList();
 	}
+
+	public static boolean hasDogsTallerThan(List<Animal> animals, int k) {
+		return animals.stream().anyMatch(s -> s.type == Type.DOG && s.height > k);
+	}
 }
