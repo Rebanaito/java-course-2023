@@ -49,4 +49,44 @@ public class Task16to20Test {
 		spidersBad = Animal.spidersVsDogsBites(animals);
 		assertThat(spidersBad).isTrue();
 	}
+
+	@Test
+	@DisplayName("Task 18 Test")
+	void task18Test() {
+		int n = 3;
+		List<Animal>[] animals = new ArrayList[n];
+		for (int i = 0; i < n; i++) {
+			animals[i] = new ArrayList<Animal>();
+		}
+		animals[0].add(new Animal("Pupa", Animal.Type.FISH, Animal.Sex.F, 3, 20, 19, false));
+		animals[0].add(new Animal("Loopa", Animal.Type.FISH, Animal.Sex.F, 3, 20, 30, false));
+		animals[0].add(new Animal("Jim", Animal.Type.FISH, Animal.Sex.M, 3, 20, 24, false));
+		animals[0].add(new Animal("Bob", Animal.Type.FISH, Animal.Sex.M, 3, 20, 27, false));
+
+		animals[1].add(new Animal("Jill", Animal.Type.FISH, Animal.Sex.F, 3, 20, 19, false));
+		animals[1].add(new Animal("Jewel", Animal.Type.DOG, Animal.Sex.F, 3, 20, 35, false));
+		animals[1].add(new Animal("Tim", Animal.Type.CAT, Animal.Sex.M, 3, 20, 32, false));
+		animals[1].add(new Animal("Rob", Animal.Type.FISH, Animal.Sex.M, 3, 20, 25, false));
+
+		animals[2].add(new Animal("Jill", Animal.Type.DOG, Animal.Sex.F, 3, 20, 40, false));
+		animals[2].add(new Animal("Jewel", Animal.Type.DOG, Animal.Sex.F, 3, 20, 36, false));
+		animals[2].add(new Animal("Tim", Animal.Type.CAT, Animal.Sex.M, 3, 20, 33, false));
+		animals[2].add(new Animal("Rob", Animal.Type.DOG, Animal.Sex.M, 3, 20, 42, false));
+
+		var bigBoy = Animal.heaviestFish(animals);
+		assertThat(bigBoy.isPresent()).isTrue();
+		assertThat(bigBoy.get().name()).isEqualTo("Loopa");
+
+		List<Animal>[] scuffed = new ArrayList[n];
+		for (int i = 0; i < n; i++) {
+			scuffed[i] = new ArrayList<Animal>();
+		}
+		scuffed[0].add(new Animal("Jill", Animal.Type.DOG, Animal.Sex.F, 3, 20, 40, false));
+		scuffed[1].add(new Animal("Jewel", Animal.Type.DOG, Animal.Sex.F, 3, 20, 36, false));
+		scuffed[2].add(new Animal("Tim", Animal.Type.CAT, Animal.Sex.M, 3, 20, 33, false));
+		scuffed[2].add(new Animal("Rob", Animal.Type.DOG, Animal.Sex.M, 3, 20, 42, false));
+
+		bigBoy = Animal.heaviestFish(scuffed);
+		assertThat(bigBoy.isPresent()).isFalse();
+	}
 }

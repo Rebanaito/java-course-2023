@@ -152,4 +152,22 @@ public record Animal(
 		float spiderRatio = (float) spiders.stream().filter(s -> s.bites).count() / spiders.size();
 		return spiderRatio > dogRatio;
 	}
+
+	public static Optional<Animal> heaviestFish(List<Animal>[] animals) {
+		Optional<Animal> bigBoy = Optional.empty();
+		for (List<Animal> animal : animals) {
+			if (animal == null) {
+				continue;
+			}
+			var heavy = animal.stream().filter(s -> s.type == Type.FISH).max(Comparator.comparingInt(Animal::weight));
+			if (heavy.isPresent()) {
+				if (bigBoy.isEmpty()) {
+					bigBoy = heavy;
+				} else if (heavy.get().weight > bigBoy.get().weight) {
+					bigBoy = heavy;
+				}
+			}
+		}
+		return bigBoy;
+	}
 }
