@@ -170,4 +170,13 @@ public record Animal(
 		}
 		return bigBoy;
 	}
+
+	public static class ValidationError extends Error {
+
+	}
+
+	public static Map<String, Set<ValidationError>> erronousEntries(List<Animal> animals) {
+		HashMap<String, Set<ValidationError>> map = new HashMap<>();
+		return map;
+	}
 }
