@@ -11,7 +11,7 @@ public class Task5Test {
 	void validList1() {
 		var list = Contact.parseContacts(new String[] {"John Locke", "Thomas Aquinas", "David Hume", "Rene Descartes"}, "ASC");
 		assertThat(list).isNotNull();
-		assertThat(list.length).isNotEqualTo(0);
+		assertThat(list.length).isEqualTo(4);
 		assertThat(list[0].firstName() + " " + list[0].lastName()).isEqualTo("Thomas Aquinas");
 		assertThat(list[1].firstName() + " " + list[1].lastName()).isEqualTo("Rene Descartes");
 		assertThat(list[2].firstName() + " " + list[2].lastName()).isEqualTo("David Hume");
@@ -23,7 +23,7 @@ public class Task5Test {
 	void validList2() {
 		var list = Contact.parseContacts(new String[] {"Paul Erdos", "Leonhard Euler", "Carl Gauss"}, "DESC");
 		assertThat(list).isNotNull();
-		assertThat(list.length).isNotEqualTo(0);
+		assertThat(list.length).isEqualTo(3);
 		assertThat(list[0].firstName() + " " + list[0].lastName()).isEqualTo("Carl Gauss");
 		assertThat(list[1].firstName() + " " + list[1].lastName()).isEqualTo("Leonhard Euler");
 		assertThat(list[2].firstName() + " " + list[2].lastName()).isEqualTo("Paul Erdos");
@@ -46,10 +46,13 @@ public class Task5Test {
 	}
 
 	@Test
-	@DisplayName("Invalid list 3")
-	void invalidList3() {
-		var list = Contact.parseContacts(new String[] {"Joe", "Matt", "Axel"}, "ASC");
+	@DisplayName("No last name")
+	void noLastName() {
+		var list = Contact.parseContacts(new String[] {"John Doe", "Matt", "Axel"}, "ASC");
 		assertThat(list).isNotNull();
-		assertThat(list.length).isEqualTo(0);
+		assertThat(list.length).isEqualTo(3);
+		assertThat(list[0].firstName()).isEqualTo("Axel");
+		assertThat(list[1].firstName()).isEqualTo("John");
+		assertThat(list[2].firstName()).isEqualTo("Matt");
 	}
 }

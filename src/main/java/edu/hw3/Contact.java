@@ -13,10 +13,13 @@ public record Contact(String firstName, String lastName) {
 
         for (int i = 0; i < contacts.length; i++) {
             var split = contacts[i].split(" ");
-            if (split.length != 2) {
+            if (split.length == 2) {
+                contacts[i] = split[1] + " " + split[0];
+            } else if (split.length == 1) {
+                contacts[i] = split[0];
+            } else {
                 return new Contact[0];
             }
-            contacts[i] = split[1] + " " + split[0];
         }
         Arrays.sort(contacts);
 
@@ -36,7 +39,11 @@ public record Contact(String firstName, String lastName) {
         if (order.equals(ASC)) {
             for (int j = 0; j < contactsReversed.length; j++) {
                 var split = contactsReversed[j].split(" ");
-                contactList[j] = new Contact(split[1], split[0]);
+                if (split.length == 2) {
+                    contactList[j] = new Contact(split[1], split[0]);
+                } else if (split.length == 1) {
+                    contactList[j] = new Contact(split[0], "");
+                }
             }
         } else {
             for (int j = 0; j < contactsReversed.length; j++) {
