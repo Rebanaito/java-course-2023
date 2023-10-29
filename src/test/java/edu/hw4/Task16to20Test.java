@@ -89,4 +89,52 @@ public class Task16to20Test {
 		bigBoy = Animal.heaviestFish(scuffed);
 		assertThat(bigBoy.isPresent()).isFalse();
 	}
+
+	@Test
+	@DisplayName("Task 19 Test")
+	void task19Test() {
+		List<Animal> animals = new ArrayList<>();
+		animals.add(new Animal("Edgar", Animal.Type.DOG, Animal.Sex.M, 3, 0, 30, true));
+		animals.add(new Animal("Amy", Animal.Type.DOG, Animal.Sex.F, 7, 17, 20, true));
+		animals.add(new Animal("Sergei", Animal.Type.SPIDER, Animal.Sex.M, -1, 5, 2, true));
+		animals.add(new Animal("Chirp", Animal.Type.BIRD, Animal.Sex.F, 2, 14, 12, false));
+		animals.add(new Animal("Jimbo", Animal.Type.CAT, Animal.Sex.M, 9, 19, 0, false));
+		animals.add(new Animal("Myla", Animal.Type.DOG, Animal.Sex.F, 4, 35, 50, false));
+		animals.add(new Animal("Peter", Animal.Type.SPIDER, Animal.Sex.M, -1, -1, -1, false));
+		var badEntries = Animal.badEntriesSet(animals);
+		assertThat(badEntries.size()).isEqualTo(4);
+		assertThat(badEntries.containsKey("Edgar")).isTrue();
+		assertThat(badEntries.containsKey("Sergei")).isTrue();
+		assertThat(badEntries.containsKey("Jimbo")).isTrue();
+		assertThat(badEntries.containsKey("Peter")).isTrue();
+
+		assertThat(badEntries.get("Edgar").size()).isEqualTo(1);
+		assertThat(badEntries.get("Sergei").size()).isEqualTo(1);
+		assertThat(badEntries.get("Jimbo").size()).isEqualTo(1);
+		assertThat(badEntries.get("Peter").size()).isEqualTo(3);
+	}
+
+	@Test
+	@DisplayName("Task 20 Test")
+	void task20Test() {
+		List<Animal> animals = new ArrayList<>();
+		animals.add(new Animal("Edgar", Animal.Type.DOG, Animal.Sex.M, 3, 0, 30, true));
+		animals.add(new Animal("Amy", Animal.Type.DOG, Animal.Sex.F, 7, 17, 20, true));
+		animals.add(new Animal("Sergei", Animal.Type.SPIDER, Animal.Sex.M, -1, 5, 2, true));
+		animals.add(new Animal("Chirp", Animal.Type.BIRD, Animal.Sex.F, 2, 14, 12, false));
+		animals.add(new Animal("Jimbo", Animal.Type.CAT, Animal.Sex.M, 9, 19, 0, false));
+		animals.add(new Animal("Myla", Animal.Type.DOG, Animal.Sex.F, 4, 35, 50, false));
+		animals.add(new Animal("Peter", Animal.Type.SPIDER, Animal.Sex.M, -1, -1, -1, false));
+		var badEntries = Animal.badEntriesString(animals);
+		assertThat(badEntries.size()).isEqualTo(4);
+		assertThat(badEntries.containsKey("Edgar")).isTrue();
+		assertThat(badEntries.containsKey("Sergei")).isTrue();
+		assertThat(badEntries.containsKey("Jimbo")).isTrue();
+		assertThat(badEntries.containsKey("Peter")).isTrue();
+
+		assertThat(badEntries.get("Edgar")).isEqualTo("Height");
+		assertThat(badEntries.get("Sergei")).isEqualTo("Age");
+		assertThat(badEntries.get("Jimbo")).isEqualTo("Weight");
+		assertThat(badEntries.get("Peter")).isEqualTo("WeightHeightAge");
+	}
 }
