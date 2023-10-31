@@ -1,12 +1,11 @@
 package edu.project2;
 
-import java.awt.image.ColorModel;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-public class DepthGenerator implements Generator {
-	public DepthGenerator() {
+public class BacktrackerGenerator implements Generator {
+	public BacktrackerGenerator() {
 	}
 
 	private final int UP = 1;
@@ -45,14 +44,15 @@ public class DepthGenerator implements Generator {
 			for (int j = 0; j < maze[i].length; j++) {
 				cells[2*i+1][2*j+1] = new Cell(2*i+1, 2*j+1, Cell.Type.PASSAGE);
 				if ((maze[i][j] & DOWN) != 0) {
-					cells[2*i+2][2*j+1] = new Cell(2*i+2, 2*j+2, Cell.Type.PASSAGE);
+					cells[2*i+2][2*j+1] = new Cell(2*i+2, 2*j+1, Cell.Type.PASSAGE);
 					System.out.print(' ');
 				} else {
 					System.out.print('_');
 				}
 				if ((maze[i][j] & RIGHT) != 0) {
+					cells[2*i+1][2*j+2] = new Cell(2*i+1, 2*j+2, Cell.Type.PASSAGE);
 					if (((maze[i][j] | maze[i][j+1]) & DOWN) != 0) {
-						cells[2*i+1][2*j+2] = new Cell(2*i, j+1, Cell.Type.PASSAGE);
+						cells[2*i+2][2*j+2] = new Cell(2*i+2, 2*j+2, Cell.Type.PASSAGE);
 						System.out.print(' ');
 					} else {
 						System.out.print('_');
