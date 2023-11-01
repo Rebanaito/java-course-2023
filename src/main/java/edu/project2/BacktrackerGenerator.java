@@ -14,6 +14,9 @@ public class BacktrackerGenerator implements Generator {
 	private final int LEFT = 8;
 
 	public Maze generate(int width, int height) {
+		if (width <= 0 || height <= 0) {
+			return null;
+		}
 		int[][] maze = new int[height][];
 		for (int i = 0; i < height; i++) {
 			maze[i] = new int[width];
@@ -22,46 +25,25 @@ public class BacktrackerGenerator implements Generator {
 			}
 		}
 		carve_passage(0, 0, maze);
-		return printMaze(maze);
+		return buildMaze(maze);
 	}
 
-	private Maze printMaze(int[][] maze) {
-		Cell[][] cells = new Cell[maze.length * 2 + 1][];
-		for (int i = 0; i < cells.length; i++) {
-			cells[i] = new Cell[maze[0].length * 2 + 1];
-			for (int j = 0; j < cells[i].length; j++) {
-				cells[i][j] = new Cell(i, j, Cell.Type.WALL);
-			}
-		}
+	private Maze buildMaze(int[][] maze) {
+		Cell[][] cells = allocCells(maze.length, maze[0].length);
 
-		System.out.print(' ');
-		for (int a = 0; a < maze[0].length * 2 - 1; a++) {
-			System.out.print('_');
-		}
-		System.out.println();
 		for (int i = 0; i < maze.length; i++) {
-			System.out.print('|');
 			for (int j = 0; j < maze[i].length; j++) {
 				cells[2*i+1][2*j+1] = new Cell(2*i+1, 2*j+1, Cell.Type.PASSAGE);
 				if ((maze[i][j] & DOWN) != 0) {
 					cells[2*i+2][2*j+1] = new Cell(2*i+2, 2*j+1, Cell.Type.PASSAGE);
-					System.out.print(' ');
-				} else {
-					System.out.print('_');
 				}
 				if ((maze[i][j] & RIGHT) != 0) {
 					cells[2*i+1][2*j+2] = new Cell(2*i+1, 2*j+2, Cell.Type.PASSAGE);
 					if (((maze[i][j] | maze[i][j+1]) & DOWN) != 0) {
 						cells[2*i+2][2*j+2] = new Cell(2*i+2, 2*j+2, Cell.Type.PASSAGE);
-						System.out.print(' ');
-					} else {
-						System.out.print('_');
 					}
-				} else {
-					System.out.print('|');
 				}
 			}
-			System.out.println();
 		}
 		return new Maze(cells.length, cells[0].length, cells);
 	}
@@ -112,5 +94,16 @@ public class BacktrackerGenerator implements Generator {
 			case RIGHT -> LEFT;
 			default -> 0;
 		};
+	}
+
+	public Cell[][] allocCells(int height, int width) {
+		Cell[][] cells = new Cell[height * 2 + 1][];
+		for (int i = 0; i < cells.length; i++) {
+			cells[i] = new Cell[width * 2 + 1];
+			for (int j = 0; j < cells[i].length; j++) {
+				cells[i][j] = new Cell(i, j, Cell.Type.WALL);
+			}
+		}
+		return cells;
 	}
 }

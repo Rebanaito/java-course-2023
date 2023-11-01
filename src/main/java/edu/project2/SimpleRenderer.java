@@ -39,7 +39,13 @@ public class SimpleRenderer implements Renderer {
 				if (type == Cell.Type.WALL) {
 					builder.append('⬛');
 				} else if (path.contains(new Coordinate(i, j))) {
-					builder.append('x');
+					if (path.indexOf(new Coordinate(i, j)) == 0) {
+						builder.append('S');
+					} else if (path.indexOf(new Coordinate(i, j)) == path.size()-1) {
+						builder.append('E');
+					} else {
+						builder.append('x');
+					}
 				} else {
 					builder.append(' ');
 				}

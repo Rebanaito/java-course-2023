@@ -20,7 +20,7 @@ public class BacktrackerSolver implements Solver {
 		if (maze.getType(now.col(), now.row()) == Cell.Type.WALL) {
 			return false;
 		} else if (now.equals(end)) {
-			System.out.println("FOUND THE PATH");
+			solution.add(now);
 			return true;
 		}
 		List<Coordinate> adjacent = new ArrayList<>();
