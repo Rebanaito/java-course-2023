@@ -1,50 +1,98 @@
 package edu.project2;
 
 import static org.assertj.core.api.Assertions.assertThat;
+
+import org.assertj.core.groups.Tuple;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+
+import javax.annotation.processing.SupportedSourceVersion;
+import java.util.*;
 
 public class MazeTest {
 	@Test
 	@DisplayName("InvalidInputs")
 	void testInvalidInputs() {
-		BacktrackerGenerator gen = new BacktrackerGenerator();
-		var maze = gen.generate(0, 10);
+		BacktrackerGenerator backtracker = new BacktrackerGenerator();
+		var maze = backtracker.generate(0, 10);
 		assertThat(maze).isNull();
 
-		maze = gen.generate(10, 0);
+		maze = backtracker.generate(10, 0);
 		assertThat(maze).isNull();
+
+		AldousBroderGenerator slow = new AldousBroderGenerator();
+		maze = slow.generate(0, 10);
+		assertThat(maze).isNull();
+
+		maze = slow.generate(10, 0);
+		assertThat(maze).isNull();
+
+        BinaryTreeGenerator bin = new BinaryTreeGenerator();
+        maze = bin.generate(0, 10);
+        assertThat(maze).isNull();
+
+        maze = bin.generate(10, 0);
+        assertThat(maze).isNull();
 	}
 
 	@Test
 	@DisplayName("EdgeCases")
 	void testEdgeCases() {
 		BacktrackerGenerator gen = new BacktrackerGenerator();
-		var maze = gen.generate(1, 5);
+		AldousBroderGenerator slow = new AldousBroderGenerator();
+        BinaryTreeGenerator bin = new BinaryTreeGenerator();
+		var maze = gen.generate(5, 1);
 		SimpleRenderer rend = new SimpleRenderer();
-		String want = "⬛ ⬛ ⬛\n" +
-				"⬛   ⬛\n" +
-				"⬛   ⬛\n" +
-				"⬛   ⬛\n" +
-				"⬛   ⬛\n" +
-				"⬛   ⬛\n" +
-				"⬛   ⬛\n" +
-				"⬛   ⬛\n" +
-				"⬛   ⬛\n" +
-				"⬛   ⬛\n" +
-				"⬛ ⬛ ⬛";
+		String want = """
+				⬛ ⬛ ⬛
+				⬛   ⬛
+				⬛   ⬛
+				⬛   ⬛
+				⬛   ⬛
+				⬛   ⬛
+				⬛   ⬛
+				⬛   ⬛
+				⬛   ⬛
+				⬛   ⬛
+				⬛ ⬛ ⬛""";
 		assertThat(rend.render(maze)).isEqualTo(want);
+		maze = slow.generate(5, 1);
+		assertThat(rend.render(maze)).isEqualTo(want);
+        maze = bin.generate(5, 1);
+        assertThat(rend.render(maze)).isEqualTo(want);
 
-		maze = gen.generate(5, 1);
-		want = "⬛ ⬛ ⬛ ⬛ ⬛ ⬛ ⬛ ⬛ ⬛ ⬛ ⬛\n" +
-				"⬛                   ⬛\n" +
-				"⬛ ⬛ ⬛ ⬛ ⬛ ⬛ ⬛ ⬛ ⬛ ⬛ ⬛";
+		maze = gen.generate(1, 5);
+		want = """
+				⬛ ⬛ ⬛ ⬛ ⬛ ⬛ ⬛ ⬛ ⬛ ⬛ ⬛
+				⬛                   ⬛
+				⬛ ⬛ ⬛ ⬛ ⬛ ⬛ ⬛ ⬛ ⬛ ⬛ ⬛""";
 		assertThat(rend.render(maze)).isEqualTo(want);
+		maze = slow.generate(1, 5);
+		assertThat(rend.render(maze)).isEqualTo(want);
+        maze = bin.generate(1, 5);
+        assertThat(rend.render(maze)).isEqualTo(want);
 	}
 
 	@Test
 	@DisplayName("SolverTest")
 	void SolverTest() {
+		Maze maze = premadeMaze();
+		BacktrackerSolver solver = new BacktrackerSolver();
+		var solution = solver.solve(maze, new Coordinate(1, 1), new Coordinate(5, 1));
+		SimpleRenderer rend = new SimpleRenderer();
+		String backtracker = rend.render(maze, solution);
+		String want = """
+				⬛ ⬛ ⬛ ⬛ ⬛ ⬛ ⬛
+				⬛ S ⬛       ⬛
+				⬛ x ⬛ x x x ⬛
+				⬛ x x x ⬛ x ⬛
+				⬛ ⬛ ⬛ ⬛ ⬛ x ⬛
+				⬛ E x x x x ⬛
+				⬛ ⬛ ⬛ ⬛ ⬛ ⬛ ⬛""";
+		assertThat(backtracker).isEqualTo(want);
+	}
+
+	private Maze premadeMaze() {
 		int width = 7;
 		int height = 7;
 		Cell[][] cells = new Cell[height][];
@@ -69,18 +117,6 @@ public class MazeTest {
 		cells[4][3] = new Cell(4, 3, Cell.Type.WALL);
 		cells[4][2] = new Cell(4, 2, Cell.Type.WALL);
 		cells[4][1] = new Cell(4, 1, Cell.Type.WALL);
-		Maze maze = new Maze(cells.length, cells[0].length, cells);
-		BacktrackerSolver solver = new BacktrackerSolver();
-		var solution = solver.solve(maze, new Coordinate(1, 1), new Coordinate(5, 1));
-		SimpleRenderer rend = new SimpleRenderer();
-		String backtracker = rend.render(maze, solution);
-		String want = "⬛ ⬛ ⬛ ⬛ ⬛ ⬛ ⬛\n" +
-				"⬛ S ⬛       ⬛\n" +
-				"⬛ x ⬛ x x x ⬛\n" +
-				"⬛ x x x ⬛ x ⬛\n" +
-				"⬛ ⬛ ⬛ ⬛ ⬛ x ⬛\n" +
-				"⬛ E x x x x ⬛\n" +
-				"⬛ ⬛ ⬛ ⬛ ⬛ ⬛ ⬛";
-		assertThat(backtracker).isEqualTo(want);
+		return new Maze(cells.length, cells[0].length, cells);
 	}
 }
