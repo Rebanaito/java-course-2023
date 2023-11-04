@@ -10,10 +10,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Task2 {
-    public static List<LocalDateTime> friday13th(int year) {
-        List<LocalDateTime> fridays = new ArrayList<>();
+    public static List<LocalDate> friday13th(int year) {
+        List<LocalDate> fridays = new ArrayList<>();
         for (int i = 12; i >= 1; i--) {
-            LocalDateTime day = LocalDateTime.of(year, Month.of(i), 13, 12, 0);
+            LocalDate day = LocalDate.of(year, Month.of(i), 13);
             if (day.getDayOfWeek() == DayOfWeek.FRIDAY) {
                 fridays.addFirst(day);
             }
@@ -21,12 +21,12 @@ public class Task2 {
         return fridays;
     }
 
-    public static LocalDateTime nextFriday13th(LocalDateTime day) {
+    public static LocalDate nextFriday13th(LocalDate day) {
         if (day.getDayOfWeek() == DayOfWeek.FRIDAY && day.getDayOfMonth() == 13) {
             return day;
         }
-        LocalDateTime d = day;
-        while (d.isBefore(LocalDateTime.MAX)) {
+        LocalDate d = day;
+        while (d.isBefore(LocalDate.MAX)) {
             d = d.with(TemporalAdjusters.next(DayOfWeek.FRIDAY));
             if (d.getDayOfMonth() == 13) {
                 break;
