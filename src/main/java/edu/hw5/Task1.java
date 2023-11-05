@@ -1,15 +1,14 @@
 package edu.hw5;
 
-import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.time.LocalDateTime;
-import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
-import java.util.Locale;
 import java.util.Optional;
 
 public class Task1 {
+    private Task1() {
+    }
+
     public static Optional<Duration> duration(String[] timestamps) {
         if (timestamps == null) {
             return Optional.empty();

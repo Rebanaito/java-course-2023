@@ -4,9 +4,12 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Task6 {
-	public static boolean contains(String string, String substring) {
-		Pattern pattern = Pattern.compile(".*" + substring + ".*");
-		Matcher matcher = pattern.matcher(string);
-		return matcher.find();
-	}
+    private Task6() {
+    }
+
+    public static boolean contains(String string, String substring) {
+        Pattern pattern = Pattern.compile(".*" + substring + ".*");
+        Matcher matcher = pattern.matcher(string);
+        return matcher.find();
+    }
 }
