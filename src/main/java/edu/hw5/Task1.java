@@ -3,13 +3,14 @@ package edu.hw5;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.Optional;
 
 public class Task1 {
     private Task1() {
     }
 
-    public static Optional<Duration> duration(String[] timestamps) {
+    public static Optional<Duration> duration(String[] timestamps) throws DateTimeParseException {
         if (timestamps == null) {
             return Optional.empty();
         }
