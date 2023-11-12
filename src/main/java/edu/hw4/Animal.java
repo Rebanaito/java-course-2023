@@ -7,6 +7,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
+import java.util.function.BinaryOperator;
+import java.util.stream.Collectors;
 
 public record Animal(
         String name,
@@ -44,18 +46,7 @@ public record Animal(
     }
 
     public static Map<Type, Integer> countTypes(List<Animal> animals) {
-        Map<Animal.Type, Integer> count = new HashMap<Type, Integer>();
-        var iterator = animals.listIterator();
-        while (iterator.hasNext()) {
-            var a = iterator.next();
-            var val = count.get(a.type);
-            if (val != null) {
-                count.put(a.type, val + 1);
-            } else {
-                count.put(a.type, 1);
-            }
-        }
-        return count;
+        return animals.stream().collect(Collectors.groupingBy(Animal::type, Collectors.summingInt(animal -> 1)));
     }
 
     public static Animal longestName(List<Animal> animals) {
@@ -81,21 +72,10 @@ public record Animal(
     }
 
     public static Map<Animal.Type, Animal> heaviestAnimal(List<Animal> animals) {
-        Map<Animal.Type, Animal> heaviest = new HashMap<Animal.Type, Animal>();
-        var iterator = animals.listIterator();
-        while (iterator.hasNext()) {
-            var a = iterator.next();
-            var val = heaviest.get(a.type);
-            if (val != null) {
-                if (val.weight < a.weight) {
-                    val = a;
-                }
-                heaviest.put(a.type, val);
-            } else {
-                heaviest.put(a.type, a);
-            }
-        }
-        return heaviest;
+        return animals.stream().collect(
+                Collectors.toMap(Animal::type,
+                        animal -> animal,
+                        BinaryOperator.maxBy(Comparator.comparingInt(Animal::weight))));
     }
 
     public static Animal oldestAnimal(List<Animal> animals) {
