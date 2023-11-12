@@ -13,7 +13,6 @@ import java.util.logging.Logger;
 public class DiskMap implements Map<String, String> {
 	private final static Logger LOGGER = Logger.getLogger("LOGGER");
 	private final static Map<String, String> map = new HashMap<String, String>();
-
 	private final static String FILENAME = "diskMap.txt";
 	private final static BufferedReader reader;
 
