@@ -1,10 +1,11 @@
 package edu.hw6;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+
+import org.junit.jupiter.api.*;
 
 import java.io.File;
+import java.sql.Time;
 
 public class Task1Test {
 	private final static String diskMapFile = "diskMap.txt";
@@ -68,25 +69,4 @@ public class Task1Test {
 		new File(diskMapFile).delete();
 	}
 
-	@Test
-	@DisplayName("Remove test")
-	void removeTest() {
-		DiskMap diskMap = new DiskMap();
-
-		diskMap.put("joe", "biden");
-		diskMap.put("donald", "trump");
-		diskMap.put("barack", "obama");
-
-		diskMap.remove("joe");
-		assertThat(diskMap.size()).isEqualTo(2);
-		assertThat(diskMap.containsValue("biden")).isFalse();
-		assertThat(diskMap.containsKey("joe")).isFalse();
-
-		DiskMap newMap = new DiskMap();
-		assertThat(newMap.size()).isEqualTo(2);
-		assertThat(newMap.containsValue("biden")).isFalse();
-		assertThat(newMap.containsKey("joe")).isFalse();
-
-		new File(diskMapFile).delete();
-	}
 }

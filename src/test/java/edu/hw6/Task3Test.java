@@ -14,14 +14,14 @@ public class Task3Test {
 	@DisplayName("Readable test")
 	void readableTest() {
 		DirectoryStream.Filter<Path> filter = AbstractFilter.readable();
-		try (DirectoryStream<Path> entries = Files.newDirectoryStream(Path.of("./"), filter)) {
+		try (DirectoryStream<Path> entries = Files.newDirectoryStream(Path.of("./.idea"), filter)) {
 			int size = 0;
 			var iterator = entries.iterator();
 			while (iterator.hasNext()) {
 				iterator.next();
 				size++;
 			}
-			assertThat(size).isEqualTo(9);
+			assertThat(size).isEqualTo(8);
 		} catch (IOException e) {
 			throw new RuntimeException(e);
 		}
@@ -31,14 +31,14 @@ public class Task3Test {
 	@DisplayName("Writeable test")
 	void writeableTest() {
 		DirectoryStream.Filter<Path> filter = AbstractFilter.writeable();
-		try (DirectoryStream<Path> entries = Files.newDirectoryStream(Path.of("./"), filter)) {
+		try (DirectoryStream<Path> entries = Files.newDirectoryStream(Path.of("./.idea"), filter)) {
 			int size = 0;
 			var iterator = entries.iterator();
 			while (iterator.hasNext()) {
 				iterator.next();
 				size++;
 			}
-			assertThat(size).isEqualTo(9);
+			assertThat(size).isEqualTo(8);
 		} catch (IOException e) {
 			throw new RuntimeException(e);
 		}
@@ -48,14 +48,14 @@ public class Task3Test {
 	@DisplayName("Regular file test")
 	void regularFileTest() {
 		DirectoryStream.Filter<Path> filter = AbstractFilter.regularFile();
-		try (DirectoryStream<Path> entries = Files.newDirectoryStream(Path.of("./"), filter)) {
+		try (DirectoryStream<Path> entries = Files.newDirectoryStream(Path.of("./.idea"), filter)) {
 			int size = 0;
 			var iterator = entries.iterator();
 			while (iterator.hasNext()) {
 				iterator.next();
 				size++;
 			}
-			assertThat(size).isEqualTo(5);
+			assertThat(size).isEqualTo(7);
 		} catch (IOException e) {
 			throw new RuntimeException(e);
 		}
@@ -65,7 +65,7 @@ public class Task3Test {
 	@DisplayName("Larger than test")
 	void largerThanTest() {
 		DirectoryStream.Filter<Path> filter = AbstractFilter.largerThan(100_000);
-		try (DirectoryStream<Path> entries = Files.newDirectoryStream(Path.of("./"), filter)) {
+		try (DirectoryStream<Path> entries = Files.newDirectoryStream(Path.of("./.idea"), filter)) {
 			int size = 0;
 			var iterator = entries.iterator();
 			while (iterator.hasNext()) {
@@ -78,14 +78,14 @@ public class Task3Test {
 		}
 
 		filter = AbstractFilter.largerThan(10);
-		try (DirectoryStream<Path> entries = Files.newDirectoryStream(Path.of("./"), filter)) {
+		try (DirectoryStream<Path> entries = Files.newDirectoryStream(Path.of("./.idea"), filter)) {
 			int size = 0;
 			var iterator = entries.iterator();
 			while (iterator.hasNext()) {
 				iterator.next();
 				size++;
 			}
-			assertThat(size).isEqualTo(9);
+			assertThat(size).isEqualTo(8);
 		} catch (IOException e) {
 			throw new RuntimeException(e);
 		}
@@ -95,20 +95,20 @@ public class Task3Test {
 	@DisplayName("Smaller than test")
 	void smallerThanTest() {
 		DirectoryStream.Filter<Path> filter = AbstractFilter.smallerThan(100_000);
-		try (DirectoryStream<Path> entries = Files.newDirectoryStream(Path.of("./"), filter)) {
+		try (DirectoryStream<Path> entries = Files.newDirectoryStream(Path.of("./.idea"), filter)) {
 			int size = 0;
 			var iterator = entries.iterator();
 			while (iterator.hasNext()) {
 				iterator.next();
 				size++;
 			}
-			assertThat(size).isEqualTo(9);
+			assertThat(size).isEqualTo(8);
 		} catch (IOException e) {
 			throw new RuntimeException(e);
 		}
 
 		filter = AbstractFilter.smallerThan(10);
-		try (DirectoryStream<Path> entries = Files.newDirectoryStream(Path.of("./"), filter)) {
+		try (DirectoryStream<Path> entries = Files.newDirectoryStream(Path.of("./.idea"), filter)) {
 			int size = 0;
 			var iterator = entries.iterator();
 			while (iterator.hasNext()) {
@@ -125,14 +125,14 @@ public class Task3Test {
 	@DisplayName("Glob test")
 	void globTest() {
 		DirectoryStream.Filter<Path> filter = AbstractFilter.globMatches("*.xml");
-		try (DirectoryStream<Path> entries = Files.newDirectoryStream(Path.of("./"), filter)) {
+		try (DirectoryStream<Path> entries = Files.newDirectoryStream(Path.of("./.idea"), filter)) {
 			int size = 0;
 			var iterator = entries.iterator();
 			while (iterator.hasNext()) {
 				iterator.next();
 				size++;
 			}
-			assertThat(size).isEqualTo(2);
+			assertThat(size).isEqualTo(6);
 		} catch (IOException e) {
 			throw new RuntimeException(e);
 		}
@@ -142,14 +142,14 @@ public class Task3Test {
 	@DisplayName("Magic number test")
 	void magicNumberTest() {
 		DirectoryStream.Filter<Path> filter = AbstractFilter.magicNumber("<?xm".getBytes());
-		try (DirectoryStream<Path> entries = Files.newDirectoryStream(Path.of("./"), filter)) {
+		try (DirectoryStream<Path> entries = Files.newDirectoryStream(Path.of("./.idea"), filter)) {
 			int size = 0;
 			var iterator = entries.iterator();
 			while (iterator.hasNext()) {
 				iterator.next();
 				size++;
 			}
-			assertThat(size).isEqualTo(2);
+			assertThat(size).isEqualTo(5);
 		} catch (IOException e) {
 			throw new RuntimeException(e);
 		}

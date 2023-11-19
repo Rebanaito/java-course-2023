@@ -8,50 +8,55 @@ import java.net.http.HttpResponse;
 import java.util.Arrays;
 
 public class HackerNews {
-	public static long[] hackerNewsTopStories() {
-		try (HttpClient client = HttpClient.newHttpClient()) {
-			HttpRequest request = HttpRequest
-					.newBuilder()
-					.uri(URI.create("https://hacker-news.firebaseio.com/v0/topstories.json"))
-					.build();
+    private HackerNews() {
+    }
 
-			HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+    private final static int POINTER_SHIFT = 9;
 
-			return Arrays.stream(
-					response.body()
-							.substring(1, response.body().length()-1)
-							.split(","))
-					.mapToLong(Long::parseLong)
-					.toArray();
-		} catch (IOException | InterruptedException e) {
-			throw new RuntimeException(e);
-		}
-	}
+    public static long[] hackerNewsTopStories() {
+        try (HttpClient client = HttpClient.newHttpClient()) {
+            HttpRequest request = HttpRequest
+                    .newBuilder()
+                    .uri(URI.create("https://hacker-news.firebaseio.com/v0/topstories.json"))
+                    .build();
 
-	public static String news(long id) {
-		try (HttpClient client = HttpClient.newHttpClient()) {
-			URI uri = URI.create(String.format("https://hacker-news.firebaseio.com/v0/item/%d.json", id));
-			HttpRequest request = HttpRequest.newBuilder().uri(uri).build();
+            HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
 
-			HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+            return Arrays.stream(
+                            response.body()
+                                    .substring(1, response.body().length() - 1)
+                                    .split(","))
+                    .mapToLong(Long::parseLong)
+                    .toArray();
+        } catch (IOException | InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
-			int start = response.body().indexOf("\"title\"");
-			if (start == -1) {
-				return null;
-			}
-			start += 9;
+    public static String news(long id) {
+        try (HttpClient client = HttpClient.newHttpClient()) {
+            URI uri = URI.create(String.format("https://hacker-news.firebaseio.com/v0/item/%d.json", id));
+            HttpRequest request = HttpRequest.newBuilder().uri(uri).build();
 
-			int end = start;
-			while (end < response.body().length()) {
-				if (response.body().charAt(end) == '"') {
-					break;
-				}
-				end++;
-			}
+            HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
 
-			return response.body().substring(start, end);
-		} catch (IOException | InterruptedException e) {
-			throw new RuntimeException(e);
-		}
-	}
+            int start = response.body().indexOf("\"title\"");
+            if (start == -1) {
+                return null;
+            }
+            start += POINTER_SHIFT;
+
+            int end = start;
+            while (end < response.body().length()) {
+                if (response.body().charAt(end) == '"') {
+                    break;
+                }
+                end++;
+            }
+
+            return response.body().substring(start, end);
+        } catch (IOException | InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
