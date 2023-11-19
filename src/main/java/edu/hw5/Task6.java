@@ -8,7 +8,7 @@ public class Task6 {
     }
 
     public static boolean contains(String string, String substring) {
-        Pattern pattern = Pattern.compile(".*" + substring + ".*");
+        Pattern pattern = Pattern.compile(substring);
         Matcher matcher = pattern.matcher(string);
         return matcher.find();
     }

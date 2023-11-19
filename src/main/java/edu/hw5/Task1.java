@@ -11,7 +11,7 @@ public class Task1 {
     }
 
     public static Optional<Duration> duration(String[] timestamps) throws DateTimeParseException {
-        if (timestamps == null) {
+        if (timestamps == null || timestamps.length == 0) {
             return Optional.empty();
         }
         Optional<Duration> dur = Optional.empty();

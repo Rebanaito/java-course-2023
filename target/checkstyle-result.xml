@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="9.3">
+<file name="/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw5/Task4.java">
+<error line="6" column="1" severity="warning" message="Private ctor in non-final class. Inspect the code and make sure its intended." source="com.puppycrawl.tools.checkstyle.checks.design.FinalClassCheck"/>
+</file>
+<file name="/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw5/Task5.java">
+<error line="6" column="1" severity="warning" message="Private ctor in non-final class. Inspect the code and make sure its intended." source="com.puppycrawl.tools.checkstyle.checks.design.FinalClassCheck"/>
+</file>
+<file name="/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw5/Task6.java">
+<error line="6" column="1" severity="warning" message="Private ctor in non-final class. Inspect the code and make sure its intended." source="com.puppycrawl.tools.checkstyle.checks.design.FinalClassCheck"/>
+</file>
+<file name="/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw5/Task3.java">
+</file>
+<file name="/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw5/Task2.java">
+<error line="10" column="1" severity="warning" message="Private ctor in non-final class. Inspect the code and make sure its intended." source="com.puppycrawl.tools.checkstyle.checks.design.FinalClassCheck"/>
+</file>
+<file name="/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw5/Formatter.java">
+</file>
+<file name="/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw5/YearMonthDay.java">
+</file>
+<file name="/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw5/CloseDays.java">
+</file>
+<file name="/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw5/DayMonthYear.java">
+</file>
+<file name="/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw5/Task7.java">
+<error line="6" column="1" severity="warning" message="Private ctor in non-final class. Inspect the code and make sure its intended." source="com.puppycrawl.tools.checkstyle.checks.design.FinalClassCheck"/>
+</file>
+<file name="/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw5/Task1.java">
+<error line="9" column="1" severity="warning" message="Private ctor in non-final class. Inspect the code and make sure its intended." source="com.puppycrawl.tools.checkstyle.checks.design.FinalClassCheck"/>
+</file>
+<file name="/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw5/Task8.java">
+<error line="6" column="1" severity="warning" message="Private ctor in non-final class. Inspect the code and make sure its intended." source="com.puppycrawl.tools.checkstyle.checks.design.FinalClassCheck"/>
+</file>
+<file name="/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw5/NumberOfDays.java">
+</file>
+<file name="/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw2/ConnectionException.java">
+</file>
+<file name="/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw2/StableConnection.java">
+</file>
+<file name="/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw2/DefaultConnectionManager.java">
+</file>
+<file name="/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw2/FaultyConnection.java">
+</file>
+<file name="/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw2/FaultyConnectionManager.java">
+</file>
+<file name="/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw2/Expr.java">
+</file>
+<file name="/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw2/Connection.java">
+</file>
+<file name="/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw2/Square.java">
+</file>
+<file name="/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw2/PopularCommandExecutor.java">
+</file>
+<file name="/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw2/ConnectionManager.java">
+</file>
+<file name="/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw2/Rectangle.java">
+</file>
+<file name="/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw2/Info.java">
+<error line="3" column="1" severity="warning" message="Private ctor in non-final class. Inspect the code and make sure its intended." source="com.puppycrawl.tools.checkstyle.checks.design.FinalClassCheck"/>
+</file>
+<file name="/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/project1/Session.java">
+</file>
+<file name="/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/project1/Word.java">
+</file>
+<file name="/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw1/Task_2.java">
+</file>
+<file name="/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw1/Task_7.java">
+</file>
+<file name="/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw1/Task_1.java">
+</file>
+<file name="/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw1/Task_4.java">
+</file>
+<file name="/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw1/Task_8.java">
+</file>
+<file name="/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw1/Task_5.java">
+</file>
+<file name="/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw1/Task_0.java">
+</file>
+<file name="/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw1/Task_6.java">
+</file>
+<file name="/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw1/Task_3.java">
+</file>
+<file name="/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw1/Utils.java">
+</file>
+<file name="/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw3/StockMarket.java">
+</file>
+<file name="/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw3/Cluster.java">
+<error line="3" column="1" severity="warning" message="Private ctor in non-final class. Inspect the code and make sure its intended." source="com.puppycrawl.tools.checkstyle.checks.design.FinalClassCheck"/>
+</file>
+<file name="/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw3/FrequencyDict.java">
+<error line="5" column="1" severity="warning" message="Private ctor in non-final class. Inspect the code and make sure its intended." source="com.puppycrawl.tools.checkstyle.checks.design.FinalClassCheck"/>
+</file>
+<file name="/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw3/CustomComparator.java">
+</file>
+<file name="/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw3/Contact.java">
+</file>
+<file name="/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw3/ReverseIterator.java">
+</file>
+<file name="/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw3/Stock.java">
+</file>
+<file name="/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw3/Roman.java">
+<error line="3" column="1" severity="warning" message="Private ctor in non-final class. Inspect the code and make sure its intended." source="com.puppycrawl.tools.checkstyle.checks.design.FinalClassCheck"/>
+</file>
+<file name="/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw3/Atbash.java">
+<error line="3" column="1" severity="warning" message="Private ctor in non-final class. Inspect the code and make sure its intended." source="com.puppycrawl.tools.checkstyle.checks.design.FinalClassCheck"/>
+</file>
+<file name="/home/revanite/Coding/Tinkoff/java-course-2023/src/main/java/edu/hw3/NYSE.java">
+</file>
+</checkstyle>
